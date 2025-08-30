@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>APK Analyzer</title>
+  </head>
+  <body>
+    <h1>Upload APK for Analysis</h1>
+    <form id="apkForm">
+      <input type="file" id="apkFile" accept=".apk" required />
+      <button type="submit">Upload & Analyze</button>
+    </form>
+    <pre id="result"></pre>
+
+    <script>
+      document
+        .getElementById("apkForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const fileInput = document.getElementById("apkFile");
+          const formData = new FormData();
+          formData.append("file", fileInput.files[0]);
+
+          const response = await fetch("http://127.0.0.1:8000/analyze_apk/", {
+            method: "POST",
+            body: formData,
+          });
+
+          const result = await response.json();
+          document.getElementById("result").textContent = JSON.stringify(
+            result,
+            null,
+            2
+          );
+        });
+    </script>
+  </body>
+</html>

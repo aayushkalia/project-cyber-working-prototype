@@ -1,0 +1,10 @@
+androguard==3.5.5
+pydantic
+scikit-learn
+pandas
+sqlalchemy
+joblib
+fastapi
+uvicorn
+sqlalchemy
+python-multipart

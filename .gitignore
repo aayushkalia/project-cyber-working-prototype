@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+ENV/
+env/
+
+# Editor folders
+.idea/
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# OneDrive / cloud syncing
+*.lnk
+*.icloud
+
+# Build / dist
+build/
+dist/
+*.egg-info/
