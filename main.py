@@ -49,7 +49,7 @@ def analyze_apk(apk_path: str):
 @app.post("/analyze_apk/")
 async def analyze_apk_endpoint(file: UploadFile = File(...)):
     try:
-        # Temporary file banakar APK save karo
+        
         with tempfile.NamedTemporaryFile(delete=False, suffix=".apk") as tmp:
             tmp.write(await file.read())
             tmp_path = tmp.name
